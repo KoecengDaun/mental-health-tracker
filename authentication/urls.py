@@ -1,12 +1,10 @@
-from django.urls import path, include
-from authentication.views import login, register, logout
+from django.urls import path
+from authentication.views import login, logout, register
 
 app_name = 'authentication'
 
 urlpatterns = [
     path('login/', login, name='login'),
-    path('auth/', include('authentication.urls')),
     path('register/', register, name='register'),
-    path('create-flutter/', create_mood_flutter, name='create_mood_flutter'),
     path('logout/', logout, name='logout'),
 ]

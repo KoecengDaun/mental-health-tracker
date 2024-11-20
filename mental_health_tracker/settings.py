@@ -9,9 +9,9 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-import os
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,13 +27,7 @@ SECRET_KEY = 'django-insecure-vd@pa+)jhw-=md9*paqzg$(%629s5ipr)*z-suw8i2+i1-go&@
 PRODUCTION = os.getenv("PRODUCTION", False)
 DEBUG = not PRODUCTION
 
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "laurentius-farel-mentalhealthtracker.pbp.cs.ui.ac.id",
-    "10.0.2.2"  # Tambahkan alamat ini untuk emulator Android
-]
-
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "laurentius-farel-mentalhealthtracker.pbp.cs.ui.ac.id", "10.0.2.2"]
 
 # Application definition
 
@@ -46,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'authentication',
-    'corsheaders',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -127,13 +121,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 if DEBUG:
     STATICFILES_DIRS = [
         BASE_DIR / 'static' # merujuk ke /static root project pada mode development
     ]
 else:
-    STATIC_ROOT = BASE_DIR / 'static' # merujuk ke /static root project pada mode production
+    STATIC_ROOT = BASE_DIR / 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -141,7 +135,7 @@ else:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost","http://127.0.0.1","http://laurentius-farel-mentalhealthtracker2.pbp.cs.ui.ac.id","https://laurentius-farel-mentalhealthtracker2.pbp.cs.ui.ac.id"
+    "http://localhost","http://127.0.0.1","http://laurentius-farel-mentalhealthtracker.pbp.cs.ui.ac.id","https://laurentius-farel-mentalhealthtracker.pbp.cs.ui.ac.id"
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
